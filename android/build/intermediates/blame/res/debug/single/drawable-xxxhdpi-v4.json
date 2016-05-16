@@ -8,12 +8,12 @@
         "source": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-alpha2\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
-        "merged": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_go_search_api_material.png",
-        "source": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\abc_ic_go_search_api_material.png"
-    },
-    {
         "merged": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png",
         "source": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-alpha2\\res\\drawable-xxxhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_go_search_api_material.png",
+        "source": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\abc_ic_go_search_api_material.png"
     },
     {
         "merged": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_btn_radio_on_mtrl.png",
@@ -36,12 +36,12 @@
         "source": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\abc_ic_clear_material.png"
     },
     {
-        "merged": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
-        "source": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-alpha2\\res\\drawable-xxxhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_menu_share_material.png",
         "source": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\abc_ic_menu_share_material.png"
+    },
+    {
+        "merged": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
+        "source": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-alpha2\\res\\drawable-xxxhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
@@ -60,12 +60,12 @@
         "source": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-alpha2\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
-        "source": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-alpha2\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
-    },
-    {
         "merged": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_menu_paste_material.png",
         "source": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\abc_ic_menu_paste_material.png"
+    },
+    {
+        "merged": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
+        "source": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-alpha2\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
         "merged": "C:\\Users\\scott\\Documents\\libgdx-demo-invaders\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_star_black_36dp.png",

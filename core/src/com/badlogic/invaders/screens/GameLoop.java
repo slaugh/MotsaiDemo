@@ -113,13 +113,20 @@ public class GameLoop extends InvadersScreen implements SimulationListener {
 //		double q4_double = q4;
 //		double rz_double = -1 * q4_double / Math.sin(theta_double/2);
 //		float rz = (float)rz_double;
-
+		float q0 = (float) Invaders.mInvaderInterface.getQ0();
+		float q1 = (float) Invaders.mInvaderInterface.getQ1();
+		float q2 = (float) Invaders.mInvaderInterface.getQ2();
+		float q3 = (float) Invaders.mInvaderInterface.getQ3();
 
 		float accelerometerY = Gdx.input.getAccelerometerY();
-		if (accelerometerY < 0)
-			simulation.moveShipLeft(delta, Math.abs(accelerometerY) / 10);
+//		if (accelerometerY < 0)
+		if (0.2f * (q0 * q1 + q2 * q3)>0) {
+//			simulation.moveShipLeft(delta, Math.abs(accelerometerY) / 10);
+			simulation.moveShipLeft(delta, Math.abs(0.2f * (q0 * q1 + q2 * q3)));
+		}
 		else
-			simulation.moveShipRight(delta, Math.abs(accelerometerY) / 10);
+//			simulation.moveShipRight(delta, Math.abs(accelerometerY) / 10);
+			simulation.moveShipRight(delta,Math.abs(0.2f * (q0 * q1 + q2 * q3)));
 
 		if (invaders.getController() != null) {
 			if (buttonsPressed > 0) {

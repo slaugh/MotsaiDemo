@@ -11,8 +11,8 @@ buildscript {
 
     ext {
         gdxVersion = json.libgdxSnapshot
-        roboVMVersion = json.robovmVersion
-        roboVMGradleVersion = json.robovmPluginVersion
+        roboVMVersion = '1.12.0'// json.robovmVersion
+        roboVMGradleVersion = '1.0.0' // json.robovmPluginVersion
         androidToolsVersion = json.androidBuildtoolsVersion
         androidSDKVersion = json.androidSDKVersion
         androidGradleToolsVersion = json.androidGradleToolVersion

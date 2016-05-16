@@ -30,6 +30,7 @@ import com.badlogic.gdx.graphics.g3d.loader.ObjLoader;
 import com.badlogic.gdx.graphics.g3d.model.MeshPart;
 import com.badlogic.gdx.graphics.g3d.model.Node;
 import com.badlogic.gdx.graphics.g3d.model.NodePart;
+import com.badlogic.gdx.math.Quaternion;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.invaders.Invaders;
@@ -41,6 +42,7 @@ public class Simulation implements Disposable {
 	public final static float PLAYFIELD_MAX_X = 14;
 	public final static float PLAYFIELD_MIN_Z = -15;
 	public final static float PLAYFIELD_MAX_Z = 2;
+	int time_keeper = 0;
 
 	public ArrayList<Invader> invaders = new ArrayList<Invader>();
 	public ArrayList<Block> blocks = new ArrayList<Block>();
@@ -162,7 +164,7 @@ public class Simulation implements Disposable {
 		explosionModel.manageDisposable(explosionMesh);
 
 		ship = new Ship(shipModel);
-		ship.transform.rotate(0, 1, 0, 180);
+		ship.transform.rotate(1, 0, 0, 180);
 
 		for (int row = 0; row < 4; row++) {
 			for (int column = 0; column < 8; column++) {
@@ -191,8 +193,24 @@ public class Simulation implements Disposable {
 		checkNextLevel();
 
 		//TODO: WHERE DO I PUT THIS!
-		ship.transform.set(
-				(float) Invaders.mInvaderInterface.getQ0(), (float) Invaders.mInvaderInterface.getQ1(), (float) Invaders.mInvaderInterface.getQ2(), (float) Invaders.mInvaderInterface.getQ3()*-1);
+
+//		float q0 = (float) Invaders.mInvaderInterface.getQ0();
+//		float q1 = (float) Invaders.mInvaderInterface.getQ1();
+//		float q2 = (float) Invaders.mInvaderInterface.getQ2();
+//		float q3 = (float) Invaders.mInvaderInterface.getQ3();
+
+//		ship.transform.set(
+//
+//				(float) Invaders.mInvaderInterface.getQ0(),
+//				(float) Invaders.mInvaderInterface.getQ1() * -1,
+//				(float) Invaders.mInvaderInterface.getQ3(),//inverted up and down movement
+//				(float) Invaders.mInvaderInterface.getQ2() * -1);
+//
+//		ship.transform.rotate(0, 0, 1, 180);
+		//      FLY HOME , Pitch , Roll
+
+//		float angle = 57.29578f*((float)(Math.atan2(2 * (q0 * q0 + q1 * q2), 1 - 2 * (q0 * q0 + q1 * q1))));
+
 	}
 
 	private void updateInvaders (float delta) {
@@ -337,19 +355,53 @@ public class Simulation implements Disposable {
 	public void moveShipLeft (float delta, float scale) {
 		if (ship.isExploding) return;
 
+		float q0 = (float) Invaders.mInvaderInterface.getQ0();
+		float q1 = (float) Invaders.mInvaderInterface.getQ1();
+		float q2 = (float) Invaders.mInvaderInterface.getQ2();
+		float q3 = (float) Invaders.mInvaderInterface.getQ3();
+
 		ship.transform.trn(-delta * Ship.SHIP_VELOCITY * scale, 0, 0);
 		ship.transform.getTranslation(tmpV1);
 		if (tmpV1.x < PLAYFIELD_MIN_X) ship.transform.trn(PLAYFIELD_MIN_X - tmpV1.x, 0, 0);
+
+		Vector3 oldTranslation = ship.transform.getTranslation(tmpV1);
+		Quaternion rotateQ = new Quaternion(q0,-1*q1,q3,-1*q2);
+
+		ship.transform.set(oldTranslation, rotateQ);
+
+//		ship.transform.set(
+//				(float) Invaders.mInvaderInterface.getQ0(),
+//				(float) Invaders.mInvaderInterface.getQ1() * -1,
+//				(float) Invaders.mInvaderInterface.getQ3(),//inverted up and down movement
+//				(float) Invaders.mInvaderInterface.getQ2() * -1);
+//
+//		ship.transform.rotate(0, 0, 1, 180);
 	}
 
 	public void moveShipRight (float delta, float scale) {
 		if (ship.isExploding) return;
 
+		float q0 = (float) Invaders.mInvaderInterface.getQ0();
+		float q1 = (float) Invaders.mInvaderInterface.getQ1();
+		float q2 = (float) Invaders.mInvaderInterface.getQ2();
+		float q3 = (float) Invaders.mInvaderInterface.getQ3();
+
 		ship.transform.trn(+delta * Ship.SHIP_VELOCITY * scale, 0, 0);
-		ship.transform.getTranslation(tmpV1);
-		//TODO: GET THIS TO ROTATE BASED ON NEBLINA MOVEMENTS
-//		ship.transform.rotate(1, 1, 1, (float) Invaders.mInvaderInterface.getQ0()*1000);
 		if (tmpV1.x > PLAYFIELD_MAX_X) ship.transform.trn(PLAYFIELD_MAX_X - tmpV1.x, 0, 0);
+
+		Vector3 oldTranslation = ship.transform.getTranslation(tmpV1);
+		Quaternion rotateQ = new Quaternion(q0,-1*q1,q3,-1*q2);
+		Vector3 flip = new Vector3(0,0,0);
+		ship.transform.set(oldTranslation.mulAdd(flip,-1), rotateQ);
+
+
+//		ship.transform.set(
+//				(float) Invaders.mInvaderInterface.getQ0(),
+//				(float) Invaders.mInvaderInterface.getQ1() * -1,
+//				(float) Invaders.mInvaderInterface.getQ3(),//inverted up and down movement
+//				(float) Invaders.mInvaderInterface.getQ2() * -1);
+//
+//		ship.transform.rotate(0, 0, 1, 180);
 	}
 
 	public void shot () {
