@@ -13,8 +13,6 @@
 
 package com.badlogic.invaders.simulation;
 
-import java.util.ArrayList;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Mesh;
@@ -32,9 +30,11 @@ import com.badlogic.gdx.graphics.g3d.loader.ObjLoader;
 import com.badlogic.gdx.graphics.g3d.model.MeshPart;
 import com.badlogic.gdx.graphics.g3d.model.Node;
 import com.badlogic.gdx.graphics.g3d.model.NodePart;
-import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Disposable;
+import com.badlogic.invaders.Invaders;
+
+import java.util.ArrayList;
 
 public class Simulation implements Disposable {
 	public final static float PLAYFIELD_MIN_X = -14;
@@ -189,6 +189,10 @@ public class Simulation implements Disposable {
 		checkInvaderCollision();
 		checkBlockCollision();
 		checkNextLevel();
+
+		//TODO: WHERE DO I PUT THIS!
+		ship.transform.set(
+				(float) Invaders.mInvaderInterface.getQ0(), (float) Invaders.mInvaderInterface.getQ1(), (float) Invaders.mInvaderInterface.getQ2(), (float) Invaders.mInvaderInterface.getQ3()*-1);
 	}
 
 	private void updateInvaders (float delta) {
@@ -320,6 +324,7 @@ public class Simulation implements Disposable {
 			shots.clear();
 			shipShot = null;
 			ship.transform.getTranslation(tmpV1);
+
 			int lives = ship.lives;
 			populate();
 			ship.transform.setTranslation(tmpV1);
@@ -342,6 +347,8 @@ public class Simulation implements Disposable {
 
 		ship.transform.trn(+delta * Ship.SHIP_VELOCITY * scale, 0, 0);
 		ship.transform.getTranslation(tmpV1);
+		//TODO: GET THIS TO ROTATE BASED ON NEBLINA MOVEMENTS
+//		ship.transform.rotate(1, 1, 1, (float) Invaders.mInvaderInterface.getQ0()*1000);
 		if (tmpV1.x > PLAYFIELD_MAX_X) ship.transform.trn(PLAYFIELD_MAX_X - tmpV1.x, 0, 0);
 	}
 

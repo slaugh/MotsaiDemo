@@ -14,6 +14,7 @@
 package com.badlogic.invaders;
 
 import com.badlogic.gdx.Application.ApplicationType;
+import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Files.FileType;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -30,13 +31,29 @@ import com.badlogic.invaders.screens.GameOver;
 import com.badlogic.invaders.screens.InvadersScreen;
 import com.badlogic.invaders.screens.MainMenu;
 
-public class Invaders extends Game {
+public class Invaders extends Game implements ApplicationListener {
+
+	public static InvaderInterface mInvaderInterface;
 
 	/** Music needs to be a class property to prevent being disposed. */
 	private Music music;
 	private FPSLogger fps;
 
 	private Controller controller;
+
+	public Invaders(InvaderInterface invaderInterface) {
+		this.mInvaderInterface = invaderInterface;
+	}
+
+
+	public interface InvaderInterface {
+		public double getQ0();
+		public double getQ1();
+		public double getQ2();
+		public double getQ3();
+		public long getTimestamp();
+	}
+
 	private ControllerAdapter controllerListener = new ControllerAdapter(){
 		@Override
 		public void connected(Controller c) {
@@ -122,3 +139,6 @@ public class Invaders extends Game {
 		return (InvadersScreen)super.getScreen();
 	}
 }
+
+
+

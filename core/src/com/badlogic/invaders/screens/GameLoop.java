@@ -89,6 +89,32 @@ public class GameLoop extends InvadersScreen implements SimulationListener {
 	public void update (float delta) {
 		simulation.update(delta);
 
+//		float q1 = BLEDeviceScanActivity.latest_Q0;
+//		float q2 = BLEDeviceScanActivity.latest_Q1;
+//		float q3 = BLEDeviceScanActivity.latest_Q2;
+//		float q4 = BLEDeviceScanActivity.latest_Q3;
+//
+//		//Equation from Omid's paper with conversions to make the math work
+//		double pi_d = Math.PI;
+//		float pi_f = (float)pi_d;
+//
+//		double q1_double = q1;
+//		double theta_double = 2*Math.acos(q1_double);
+//		float theta = (float)theta_double*180/pi_f;
+//
+//		double q2_double = q2;
+//		double rx_double = -1 * q2_double / Math.sin(theta_double/2);
+//		float rx = (float)rx_double;
+//
+//		double q3_double = q3;
+//		double ry_double = -1 * q3_double / Math.sin(theta_double/2);
+//		float ry = (float)ry_double;
+//
+//		double q4_double = q4;
+//		double rz_double = -1 * q4_double / Math.sin(theta_double/2);
+//		float rz = (float)rz_double;
+
+
 		float accelerometerY = Gdx.input.getAccelerometerY();
 		if (accelerometerY < 0)
 			simulation.moveShipLeft(delta, Math.abs(accelerometerY) / 10);

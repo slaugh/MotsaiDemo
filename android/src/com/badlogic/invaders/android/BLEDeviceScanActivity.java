@@ -32,12 +32,12 @@ import butterknife.OnClick;
 
 public class BLEDeviceScanActivity extends ListActivity {
 
+    //TODO: Implement parcelable, and write the writeToParcel() function to package Q values OR use broadcast receivers
     public static float latest_Q0 = 0.0f;
     public static float latest_Q1 = 0.0f;
     public static float latest_Q2 = 0.0f;
     public static float latest_Q3 = 0.0f;
-
-    long timestamp_N =0;
+    public static long timestamp_N =0;
 
     private static final int REQUEST_ENABLE_BT = 0;
     private BluetoothAdapter mBluetoothAdapter;
